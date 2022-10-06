@@ -35,6 +35,7 @@ function SignIn(){
             onChange={e => setEmail(e.target.value)}/>
 
           <button type='submit'>Sign in</button>
+          (Please re-open this page in another tab too see synchronized changes accross tabs)
         </form>
       </div>
     </div>

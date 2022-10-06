@@ -1,6 +1,11 @@
-import { configureStore } from "@reduxjs/toolkit";
 import userReducer from "./slices/userSlice";
+import { createStore, applyMiddleware } from 'redux'
+import { createStateSyncMiddleware, initStateWithPrevTab } from 'redux-state-sync'
 
-export const store =  configureStore({
-  reducer: userReducer,
-})
+const config = {}
+const middlewares = [
+  createStateSyncMiddleware(config),
+]
+
+export const store = createStore(userReducer, {}, applyMiddleware(...middlewares))
+initStateWithPrevTab(store)

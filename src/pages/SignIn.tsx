@@ -1,9 +1,11 @@
 import { useId, useState } from "react";
 
 import { useDispatch } from "react-redux";
-import {DefaultButton, PrimaryButton} from "../components/muumwind/atoms/buttons";
+import {
+	DefaultButton,
+	PrimaryButton,
+} from "../components/muumwind/atoms/buttons";
 import { signIn } from "../redux/slices/userSlice";
-
 
 import "./signin.css";
 
@@ -15,7 +17,7 @@ function SignIn() {
 
 	const [emailId, passwordId] = useId();
 
-	const signin = (e) => {
+	const signin = (e: any) => {
 		e.preventDefault();
 		dispatch(signIn({ password, email }));
 	};
@@ -66,7 +68,7 @@ function SignIn() {
 								name=""
 								id={passwordId}
 								placeholder="Enter Password"
-								minLength="6"
+								minLength={6}
 								className="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500
               focus:bg-white focus:outline-none"
 								required
@@ -84,12 +86,11 @@ function SignIn() {
 							</a>
 						</div>
 
-
-						<PrimaryButton >
-							<span>Log in</span> 
+						<PrimaryButton>
+							<span>Log in</span>
 						</PrimaryButton>
 
-						<DefaultButton  >
+						<DefaultButton>
 							<svg className="w-4" viewBox="0 0 533.5 544.3">
 								<path
 									d="M533.5 278.4c0-18.5-1.5-37.1-4.7-55.3H272.1v104.8h147c-6.1 33.8-25.7 63.7-54.4 82.7v68h87.7c51.5-47.4 81.1-117.4 81.1-200.2z"
@@ -109,13 +110,9 @@ function SignIn() {
 								/>
 							</svg>
 
-							<span>Log in with Google</span> 
-							
+							<span>Log in with Google</span>
 						</DefaultButton>
-
-
 					</form>
-
 
 					<p className="mt-8">
 						Need an account?{" "}
@@ -129,8 +126,6 @@ function SignIn() {
 				</div>
 			</div>
 		</section>
-
-
 	);
 }
 

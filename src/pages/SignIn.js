@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { signIn } from "../redux/slices/userSlice";
 
+import PrimaryButton from "../components/muumwind/butons/PrimaryButton";
 
 import "./signin.css";
 
@@ -89,6 +90,8 @@ function SignIn() {
 						>
 							Log In
 						</button>
+
+						<PrimaryButton buttonText="Log In" />
 					</form>
 
 					<hr className="my-6 border-gray-300 w-full" />

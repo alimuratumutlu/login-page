@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useId, useState } from "react";
 
 import { useDispatch } from "react-redux";
-import PrimaryButton from "../components/muumwind/atoms/buttons/PrimaryButton";
+import {DefaultButton, PrimaryButton} from "../components/muumwind/atoms/buttons";
 import { signIn } from "../redux/slices/userSlice";
 
 
@@ -12,6 +12,8 @@ function SignIn() {
 	const [password, setPassword] = useState("");
 
 	const dispatch = useDispatch();
+
+	const [emailId, passwordId] = useId();
 
 	const signin = (e) => {
 		e.preventDefault();
@@ -45,11 +47,10 @@ function SignIn() {
 							<input
 								type="email"
 								name="email"
-								id=""
+								id={emailId}
 								placeholder="Enter your email"
 								className="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500 focus:bg-white focus:outline-none"
 								autoFocus
-								autoComplete={true}
 								required
 								onChange={(e) => setEmail(e.target.value)}
 								value={email}
@@ -63,7 +64,7 @@ function SignIn() {
 							<input
 								type="password"
 								name=""
-								id=""
+								id={passwordId}
 								placeholder="Enter Password"
 								minLength="6"
 								className="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500
@@ -84,11 +85,11 @@ function SignIn() {
 						</div>
 
 
-						<PrimaryButton color="indigo" >
+						<PrimaryButton >
 							<span>Log in</span> 
 						</PrimaryButton>
 
-						<PrimaryButton color="white" >
+						<DefaultButton  >
 							<svg className="w-4" viewBox="0 0 533.5 544.3">
 								<path
 									d="M533.5 278.4c0-18.5-1.5-37.1-4.7-55.3H272.1v104.8h147c-6.1 33.8-25.7 63.7-54.4 82.7v68h87.7c51.5-47.4 81.1-117.4 81.1-200.2z"
@@ -110,7 +111,7 @@ function SignIn() {
 
 							<span>Log in with Google</span> 
 							
-					</PrimaryButton>
+						</DefaultButton>
 
 
 					</form>

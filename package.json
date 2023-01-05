@@ -19,6 +19,7 @@
 		"redux-persist": "^6.0.0",
 		"redux-state-sync": "^3.1.4",
 		"reduxjs-toolkit-persist": "^7.2.1",
+		"vercel-submodules": "^1.0.8",
 		"web-vitals": "^2.1.4"
 	},
 	"scripts": {

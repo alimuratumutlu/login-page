@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# AUTH PROJECT SOFTWARE DEVELOPMENT LIFE CYCLE
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+I am building a SPA project that will be used for authorization through sudmomains of Muum Dev. Network. All subdomain must be authorized by the token that is created by this login project. It should use Firebase for login and login status must be sycned between tabs. 
 
-## Available Scripts
+## 1. Planning
 
-In the project directory, you can run:
+The project will need 4 pages: Profile, Login, Register and Forgot Password.
 
-### `npm start`
+### Software Arcitecture (What & Where)
+- Routing for country detail page ✅
+- Global State for auth status, performance and stability ✅
+- Header with navbar (visible only authenticated users)
+- Navbar must contain links for other Network sites and logout button
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Design Pattern (What & How)
+- Atomic Design while developing components ✅
+- React router for routing ✅
+- Redux for global state management ✅
+- Best practices for performance issues ✅
+- SOLID principles while developing project ✅
+- TailwindCSS for the project UI ✅
+- Containerize the entire application with Docker file 
+- Docker file to the repo source code
+- TypeScript (and its best practice) ✅
+- React-query with React Router ✅
+- Unit tests for the components
+- CI/CD pipeline with Github Actions for running tests  ✅
+- CI/CD pipeline with Github Actions for running linting  ✅
+- ESLint recommended rules and precommit hooks for linting and code formatting validation ✅
+- Prevent commit if linting not passed  ✅
+- Formik & custom hook for form elements, their validation and warning rules
+- Once form is submitted, generate token by using the fake Login API from https://reqres.in/api/login 
+- React-icons for icons
 
-### `npm test`
+## 2. Analysis of Requirements
+**Login Page**
+- Must contain, email, password, remember me checkbox
+- Inputs must have validation
+- On Fail
+    - Show a toast message for user
+- On Success:
+    - Store the token on localstorage if the remember me checkbox is checked 
+    - Redirect to country listing page 
+- When ever you refresh the page, you need to set user as authenticated if you have token available in localstorage (if you checked the remember me checkbox)
+- This login page should not be accessible for authenticated users (if you checked the remember me checkbo)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

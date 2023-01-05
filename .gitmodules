@@ -1,0 +1,3 @@
+[submodule "src/components/muumwind"]
+	path = src/components
+	url = https://github.com/muum/muumwind
